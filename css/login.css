@@ -14,11 +14,15 @@ body{
     box-shadow: 10px 10px 10px rgb(243,221,200);
 }
 
-img {
-    /* border-radius: 30px; */
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;    
+/* retira as bordas caso seja um dispostivo mobile */
+@media (min-width: 992px) {
+    img {
+        /* border-radius: 30px; */
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;    
+    }
 }
+
 
 .btn1 {
     border: none;
