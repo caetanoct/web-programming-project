@@ -7,5 +7,5 @@ function changeToRegister() {
 }
 
 function changeToIndex() {
-    window.location.href = "index.html";
+    window.location.href = "landing_page.html";
 }

@@ -19,30 +19,70 @@
               <div class="row g-0 mt-2 justify-content-center">                  
                   <div class="col-lg-6 text-center">
                     <h1 class="font-weight-bold py-3">Sistema de Petshop</h1>
-                    <h4>Agendamento</h4>
+                    <h4 class="p-3">Agendamento</h4>
                     <form>
-                        <div class="form-row">
+                        <div class="form-row mx-2">
                             <div class="col">
                                 <input type="pet_name" placeholder="Nome do Pet" class="form-control my-3 p-3">
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-row mx-2">
                             <div class="col">
                                 <input type="text" id="markup_date_picker" placeholder="Clique para Selecionar a data" class="form-control input-group date my-3 p-3" data-provide="datepicker">
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-row mx-2">
                             <div class="col">
-                                <button type="button" class="btn1 mt-3 mb-3">Login</button>
+                                <select class="form-select p-3">
+                                    <option selected>Selecione o tipo de serviço</option>
+                                    <option value="1">Banho</option>
+                                    <option value="2">Tosa</option>
+                                    <option value="3">Consulta com Veterinário</option>
+                                    <option value="4">Atendimento de Emergência</option>
+                                  </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row mx-2">
+                            <label class="my-3" for="big_pet_button">Porte do Pet:</label>
+                            <div class="col">
+                                
+                                                         
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_group" id="big_pet_button" value="option1" checked>
+                                    <label class="form-check-label" for="big_pet_button">
+                                      Grande
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_group" id="medium_pet_button" value="option2">
+                                    <label class="form-check-label" for="medium_pet_button">
+                                      Médio
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="radio_group" id="small_pet_button" value="option3">
+                                    <label class="form-check-label" for="small_pet_button">
+                                      Pequeno
+                                    </label>
+                                  </div>
+                            
+                            </div>
+                        </div>
+
+                        <div class="form-row mx-2">
+                            <div class="col">
+                                <button type="button" class="btn1 mt-3 mb-3">Enviar</button>
                             </div>
                         </div>
                     </form>
                   </div>                
               </div>
           </div>
-    </section>
+    </section>    
+    <script src="./js/services_form.js"></script>
     <!-- jquery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- bootstrap js -->
