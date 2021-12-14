@@ -14,12 +14,16 @@ body{
     box-shadow: 10px 10px 10px rgb(243,221,200);
 }
 
-/* retira as bordas caso seja um dispostivo mobile */
-@media (min-width: 992px) {
-    img {
-        /* border-radius: 30px; */
+section img {
+    /* border-radius: 30px; */
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;    
+}
+/* arruma as bordas em disposivos mobile */
+@media (max-width: 992px) {
+    section img {    
         border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;    
+        border-top-right-radius: 30px;    
     }
 }
 
@@ -46,3 +50,17 @@ a:link {
 a:hover {
     text-decoration: underline;
 }
+a.navlink {
+    color: gray;
+    padding: 0.5em;
+}
+
+nav a:hover, nav a:focus {
+    color: #333;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    text-decoration: none;
+}
+/* nav {
+    background-color: rgb(253,231,210, 0.1);
+    border-radius: 10px;
+} */

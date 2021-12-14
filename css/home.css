@@ -56,7 +56,7 @@ body {
 .nav-masthead .nav-link:focus {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
-
+/* The “+” sign selector is used to select the elements that are placed immediately after the specified element but not inside the particular elements */
 .nav-masthead .nav-link + .nav-link {
   margin-left: 1rem;
 }
