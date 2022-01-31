@@ -55,7 +55,7 @@
                     <form>
                         <div class="form-row mx-2">
                             <div class="col">
-                                <input type="pet_name" placeholder="Nome do Pet" class="form-control my-3 p-3">
+                                <input id="pet_name" type="text" placeholder="Nome do Pet" class="form-control my-3 p-3">
                             </div>
                         </div>
 
@@ -68,8 +68,8 @@
 
                         <div class="form-row mx-2">
                             <div class="col">
-                                <select class="form-select p-3">
-                                    <option selected>Selecione o tipo de serviço</option>
+                                <select class="form-select p-3" id="service_type_select">
+                                    <option selected value="0">Selecione o tipo de serviço</option>
                                     <option value="1">Banho</option>
                                     <option value="2">Tosa</option>
                                     <option value="3">Consulta com Veterinário</option>
@@ -110,7 +110,7 @@
 
                         <div class="form-row mx-2">
                             <div class="col">
-                                <button type="button" class="btn1 mt-3 mb-3">Enviar</button>
+                                <button type="button" class="btn1 mt-3 mb-3" id="send_button">Enviar</button>
                             </div>
                         </div>
                     </form>
