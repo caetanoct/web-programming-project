@@ -19,7 +19,7 @@ function highlightOnNaN () {
 var cpfHelpTextAdded = false;
 function maskCPF () {
     console.log(cpf.value);
-    let prev_value = ""
+    let prev_value = "";
     if (cpf.value.length > 1) {
         prev_value = cpf.value.substring(0,cpf.value.length-1);
     }
@@ -27,7 +27,7 @@ function maskCPF () {
         cpf.style.background = "Salmon";
         if (!cpfHelpTextAdded) {
             var tag = document.createElement("small");
-            var text = document.createTextNode("Por favor, Digite números para o CPF.")
+            var text = document.createTextNode("Por favor, Digite números para o CPF.");
             tag.appendChild(text);
             var element = document.querySelector(".form-row");
             element.appendChild(tag);

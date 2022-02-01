@@ -3,18 +3,32 @@ const button = document.querySelector("#send_button");
 const service_type_select = document.querySelector("#service_type_select");
 const pet_name = document.getElementById("pet_name");
 const markup_date_picker = document.getElementById("markup_date_picker");
+const time_picker = document.getElementById("time");
 const radio_group = document.getElementsByName('radio_group');
 // adding listeners
 // button.onclick(getCheckedRadio());
-service_type_select.addEventListener("change",getSelectedOption);
 button.addEventListener("click",printAppointment);
 pet_name.addEventListener("blur",getPetName);
 markup_date_picker.addEventListener("blur",getDate);
+time_picker.addEventListener("focus",printHelp);
+time_picker.addEventListener("blur",removeHelp);
+service_type_select.addEventListener("change",getSelectedOption);
 // add listener for all radio group items
 for (i = 0; i < radio_group.length; i++) {
     radio_group[i].addEventListener("change",getCheckedRadio);
 }
 // FUNCTIONS
+function printHelp() {
+    var tag = document.createElement("small");  
+    var text = document.createTextNode("Digite o tempo no formato HH:MM AM/PM");    
+    tag.appendChild(text);
+    var help = document.querySelector("#time-col");
+    help.appendChild(tag);
+}
+function removeHelp() {
+    var help = document.querySelector("#time-col");
+    help.removeChild(help.lastChild);
+}
 function getDate () {
     return markup_date_picker.value;
 }
