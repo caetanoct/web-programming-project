@@ -23,7 +23,7 @@ function printAppointment() {
     let date = getDate();
     let option = getSelectedOption();
     let pet_size = getCheckedRadio();
-    console.log("name="+name+" date="+date+" option="+option+" petsize="+pet_size);
+    window.alert("name="+name+" date="+date+" option="+option+" petsize="+pet_size);
 }
 function getPetName () {
     let name = pet_name.value;
