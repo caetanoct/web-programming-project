@@ -16,7 +16,7 @@ cpf.setAttribute("maxlength","14");
 var cpfHelpTextAdded = false;
 
 function mail_blur_handler() {
-    console.log(validate_email(email.value) == true ? "valid email" : "unvalid email");
+    validate_email(email.value) == true ? email.style.background = "White" : email.style.background = "Salmon";    
 }
 // receveis email as a string, and return true if the email passes the regex test.
 function validate_email(email) {

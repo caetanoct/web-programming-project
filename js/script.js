@@ -9,3 +9,7 @@ function changeToRegister() {
 function changeToIndex() {
     window.location.href = "index.html";
 }
+
+function changeToServices() {
+    window.location.href = "services_form.html";
+}
