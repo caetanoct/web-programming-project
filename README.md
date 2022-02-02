@@ -22,6 +22,7 @@ Pra remover sarjetas (*gutters*) basta usar `g-0`
 
 ## Links Úteis
 
+* [REGEX Javascript online](https://regexr.com)
 * [Bootstrap Icons](https://icons.getbootstrap.com/)
 * [Bootstrap Date Picker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
 * [Bootstrap Flex](https://getbootstrap.com/docs/4.4/utilities/flex/)
