@@ -1,5 +1,7 @@
 // ################## FETCHING ELEMENTS ##################
 const cpf = document.getElementById("cpf");
+const register_name = document.getElementById("name");
+const surname = document.getElementById("surname");
 const password = document.getElementById("pass1");
 const confpassword = document.getElementById("pass2");
 const button = document.querySelector("#register_button");
@@ -43,7 +45,7 @@ function mask_CPF () {
             var tag = document.createElement("small");
             var text = document.createTextNode("Por favor, Digite números para o CPF.");
             tag.appendChild(text);
-            var element = document.querySelector(".form-row");
+            var element = document.querySelector("#cpf-div-row");
             element.appendChild(tag);
             cpfHelpTextAdded = true;
         }
@@ -56,7 +58,7 @@ function mask_CPF () {
         cpf.style.background = "white";
         // and if the HTML element was added, remove it
         if (cpfHelpTextAdded) {
-            var element = document.querySelector(".form-row");
+            var element = document.querySelector("#cpf-div-row");
             element.removeChild(element.lastChild);
             cpfHelpTextAdded = false;
         }
@@ -67,15 +69,21 @@ function mask_CPF () {
     if (cpf.value.length == 11) cpf.value += "-";
 }
 
-function register_form_button_pressed () {    
-    validate_password();    
-    console.log("the mail test result is = "+validate_email(email.value));
+function register_form_button_pressed () {
+    window.alert(`
+    CPF: ${cpf.value}\n
+    NOME: ${register_name.value}\n
+    SOBRENOME: ${surname.value}\n
+    EMAIL: ${email.value}\n
+    PASSWORD: ${password.value}\n
+    CONFPASSWORD: ${confpassword.value}\n
+    `);
 }
 
 function validate_password () {
     if (confpassword.value !== password.value) {
-        console.log("passwords don't match");
+        confpassword.style.background = "Salmon";        
     } else {
-        console.log("passwords match");
+        confpassword.style.background = "white";
     }
 }
