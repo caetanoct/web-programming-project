@@ -26,7 +26,42 @@ function validate_email(email) {
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
-
+// validate CPF, param: cpf in this format 00000000000
+function validate_cpf(str_cpf) {
+    let sum = 0;
+    let module = 0;
+    if (str_cpf == "00000000000") return false;
+    // sum 9 first digits multiplied by the reverse positioning index
+    // example first digit is multiplied by 10, second multiblied by 9...
+    for (i = 1; i <= 9; i++) {
+        sum = sum + parseInt(str_cpf.substring(i-1,i)) * (11 - i);        
+    }
+    // multiply the sum obtained by 10 and divide by 11, the module value will be used to verify the first verifying digit
+    module = (sum * 10) % 11;
+    // if the value is 10 or 11 the value will be considered as 0
+    if ((module == 10) || (module == 11)) {
+        module = 0;
+    }
+    // if the module doesnt match first verifyng digit then return false, else continue to verify second digit
+    if (module != parseInt(str_cpf.substring(9, 10))) {
+        return false;  
+    }
+    // redefine the sum value
+    sum = 0;
+    for (i = 1; i <= 10; i++) {
+        sum = sum + parseInt(str_cpf.substring(i-1,i)) * (12-i);
+    }
+    module = (sum * 10) % 11;
+    if ((module == 10) || (module == 11)) {
+       module = 0; 
+    }
+    // if the module doesnt matches neither the first nor the second, than return false.
+    if (module != parseInt(str_cpf.substring(10,11))) {
+        return false;
+    }
+    // if it passed the tests, then it means it's a valid cpf
+    return true;
+}
 function mask_CPF () {
     console.log(cpf.value);
     // define prev_value as empty string
@@ -82,7 +117,7 @@ function register_form_button_pressed () {
 
 function validate_password () {
     if (confpassword.value !== password.value) {
-        confpassword.style.background = "Salmon";        
+        confpassword.style.background = "Salmon";
     } else {
         confpassword.style.background = "white";
     }
