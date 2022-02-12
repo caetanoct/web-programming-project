@@ -4,10 +4,15 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 ## Sistema Web para Petshops
 
 ## Entrega 2
+
 (X) Entrega de todas as páginas do sistema - FEITO
+
 (X) Páginas responsivas - FEITO
+
 (X) Eventos - FEITO
+
 () Estrutura de formulários - TO-DO @TAINAN
+
 () Verificação de formulários - TO-DO @IGOR
 
 ### Grupo:
