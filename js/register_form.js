@@ -8,28 +8,37 @@ const button = document.querySelector("#register_button");
 const email = document.querySelector("#mail");
 // ################## EVENTS ##################
 // button.onclick(printCheckedRadio());
-password.addEventListener('change',validate_password);
-confpassword.addEventListener('change',validate_password);
 button.addEventListener("click",register_form_button_pressed);
 cpf.addEventListener("input", mask_CPF);
-email.addEventListener("blur", mail_blur_handler);
-// ################## FUNCTIONS ##################
+cpf.addEventListener("blur", verify_cpf);
+register_name.addEventListener("input", verifyName);
+surname.addEventListener("input", verifySurname);
+email.addEventListener("blur", verifyEmail);
+password.addEventListener("input", verifyPassword);
+password.addEventListener("input",validate_password);
+confpassword.addEventListener("input",validate_password);
+// ################## ATTRIBUTES AND FLAGS ##################
 cpf.setAttribute("maxlength","14");
 var cpfHelpTextAdded = false;
+var nameHelpTextAdded = false;
+var surnameHelpTextAdded = false;
+var emailHelpTextAdded = false;
+var passwordHelpTextAdded = false;
+var confpasswordHelpTextAdded = false;
+var cpfValid = false;
+var nameValid = false;
+var surnameValid = false;
+var emailValid = false;
+var passwordValid = false;
 
-function mail_blur_handler() {
-    validate_email(email.value) == true ? email.style.background = "White" : email.style.background = "Salmon";    
-}
-// receveis email as a string, and return true if the email passes the regex test.
-function validate_email(email) {
-    // match negated sets of not whitespace and not @ character with one or more plus a @ symbol and negated set . negated set.
-    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
+// ################## FUNCTIONS ##################
+
 // validate CPF, param: cpf in this format 00000000000
-function validate_cpf(str_cpf) {
+function validate_cpf () {
     let sum = 0;
     let module = 0;
+    let str_cpf = cpf.value.substring(0,3) + cpf.value.substring(4,7) + cpf.value.substring(8,11) + cpf.value.substring(12);
+
     if (str_cpf == "00000000000") return false;
     // sum 9 first digits multiplied by the reverse positioning index
     // example first digit is multiplied by 10, second multiblied by 9...
@@ -62,8 +71,32 @@ function validate_cpf(str_cpf) {
     // if it passed the tests, then it means it's a valid cpf
     return true;
 }
+function verify_cpf () {
+    let str_cpf = cpf.value;
+
+    // if the cpf is incomplete, trigg a message
+    if (str_cpf.length < 14) {
+        cpf.style.background = "Salmon";
+        if (!cpfHelpTextAdded) {
+            addWarning(cpf, "cpf", "Por favor, digite um tamanho de CPF válido.");
+            cpfHelpTextAdded = true;
+        }
+        cpfValid = false;
+        return;
+    }
+
+    if (!validate_cpf()) {
+        cpf.style.background = "Salmon";
+        if (!cpfHelpTextAdded) {
+            addWarning(cpf, "cpf", "Por favor, digite um CPF válido.");
+            cpfHelpTextAdded = true;
+        }
+        cpfValid = false;
+        return;
+    }
+    cpfValid = true;
+}
 function mask_CPF () {
-    console.log(cpf.value);
     // define prev_value as empty string
     let prev_value = "";
     // if cpf value has more than 1 char (it will if a nan char is typed)
@@ -71,17 +104,10 @@ function mask_CPF () {
         // the prev_value of the cpf will be a string from 0 to length-1;
         prev_value = cpf.value.substring(0,cpf.value.length-1);
     }
-    // if last chracter typed was not a number
+    // if last character typed was not a number
     if (isNaN(cpf.value[cpf.value.length-1])){
-        // hightlight the background in red        
-        cpf.style.background = "Salmon";
-        // add new html element with help tips if it was not already added
         if (!cpfHelpTextAdded) {
-            var tag = document.createElement("small");
-            var text = document.createTextNode("Por favor, Digite números para o CPF.");
-            tag.appendChild(text);
-            var element = document.querySelector("#cpf-div-row");
-            element.appendChild(tag);
+            addWarning(cpf, "cpf", "Por favor, digite apenas números para o CPF.");
             cpfHelpTextAdded = true;
         }
         // restore the old cpf value
@@ -89,7 +115,7 @@ function mask_CPF () {
         // stop execution and dont mask
         return;
     } else {
-        // if last character is a number; unhighlight the background
+        // unhighlight the background
         cpf.style.background = "white";
         // and if the HTML element was added, remove it
         if (cpfHelpTextAdded) {
@@ -104,21 +130,170 @@ function mask_CPF () {
     if (cpf.value.length == 11) cpf.value += "-";
 }
 
-function register_form_button_pressed () {
-    window.alert(`
-    CPF: ${cpf.value}\n
-    NOME: ${register_name.value}\n
-    SOBRENOME: ${surname.value}\n
-    EMAIL: ${email.value}\n
-    PASSWORD: ${password.value}\n
-    CONFPASSWORD: ${confpassword.value}\n
-    `);
+function verifyName () {
+    // define prev_value as empty string
+    let prev_value = "";
+    // if register_name value has more than 1 char (it will if a nan char is typed)
+    if (register_name.value.length > 1) {
+        // the prev_value of the register_name will be a string from 0 to length-1;
+        prev_value = register_name.value.substring(0,register_name.value.length-1);
+    }
+    // if last character typed was not a letter
+    if (!register_name.value[register_name.value.length-1].match(/[a-z]/i)){
+        if (!nameHelpTextAdded) {
+            addWarning(register_name, "name", "Por favor, digite apenas letras.");
+            nameHelpTextAdded = true;
+        }
+        // restore the old register_name value
+        register_name.value = prev_value;
+        nameValid = false;
+        return;
+    } else {
+        // unhighlight the background
+        register_name.style.background = "white";
+        // and if the HTML element was added, remove it
+        if (nameHelpTextAdded) {
+            var element = document.querySelector("#name-div-row");
+            element.removeChild(element.lastChild);
+            nameHelpTextAdded = false;
+        }
+        if (register_name.value.length > 1) {
+            nameValid = true;
+        }
+    }
+}
+
+function verifySurname () {
+    // define prev_value as empty string
+    let prev_value = "";
+    // if surname value has more than 1 char (it will if a nan char is typed)
+    if (surname.value.length > 1) {
+        // the prev_value of the surname will be a string from 0 to length-1;
+        prev_value = surname.value.substring(0,surname.value.length-1);
+    }
+    // if last character typed was not a letter
+    if (!surname.value[surname.value.length-1].match(/[a-z]/i)){
+        if (!surnameHelpTextAdded) {
+            addWarning(surname, "surname", "Por favor, digite apenas letras.");
+            surnameHelpTextAdded = true;
+        }
+        // restore the old surname value
+        surname.value = prev_value;
+        return;
+    } else {
+        // if last character is a number; unhighlight the background
+        surname.style.background = "white";
+        // and if the HTML element was added, remove it
+        if (surnameHelpTextAdded) {
+            var element = document.querySelector("#surname-div-row");
+            element.removeChild(element.lastChild);
+            surnameHelpTextAdded = false;
+        }
+        if (surname.value.length > 1) {
+            surnameValid = true;
+        }
+    }
+}
+
+function verifyEmail() {
+    // match negated sets of not whitespace and not @ character with one or more plus a @ symbol and negated set. negated set.
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email.value)) {
+        if (!emailHelpTextAdded) {
+            addWarning(email, "mail", "Por favor, preencha o email adequadamente.");
+            emailHelpTextAdded = true;
+        }
+        emailValid = false;
+    } else {
+        // unhighlight the background
+        email.style.background = "White";
+        // and if the HTML element was added, remove it
+        if (emailHelpTextAdded) {
+            var element = document.querySelector("#mail-div-row");
+            element.removeChild(element.lastChild);
+            emailHelpTextAdded = false;
+        }
+        emailValid = true;
+    }    
+}
+
+function verifyPassword () {
+    let strength = 0;
+    let pass_str = password.value;
+    // define how strong is the password
+    if (/[a-z]/.test(pass_str)) strength++;
+    if (/[A-Z]/.test(pass_str)) strength++;
+    if (/[0-9]/.test(pass_str)) strength++;
+    if (/[^A-Za-z0-9]/.test(pass_str)) strength++;
+
+    password.style.background = "White";
+    if (passwordHelpTextAdded) {
+        var element = document.querySelector("#pass1-div-row");
+        element.removeChild(element.lastChild);
+        passwordHelpTextAdded = false;
+    }
+
+    if (strength == 0) return;
+    
+    // describes the intensity of the strength
+    let strengthMsg = "";
+    if (strength == 1) strengthMsg = "fraca"
+    else if (strength == 2) strengthMsg = "média"
+    else if (strength == 3) strengthMsg = "forte"
+    else if (strength == 4) strengthMsg = "muito forte";
+
+    let colors = ["LightCoral", "LightGoldenRodYellow", "PaleGreen", "LightGreen"];
+    addWarning(password, "pass1", "Intensidade da senha: "+strengthMsg);
+    password.style.background = colors[strength-1];
+    passwordHelpTextAdded = true;
 }
 
 function validate_password () {
     if (confpassword.value !== password.value) {
-        confpassword.style.background = "Salmon";
+        if (!confpasswordHelpTextAdded) {
+            addWarning(confpassword, "pass2", "As senhas estão diferentes.");
+            confpasswordHelpTextAdded = true;
+            passwordValid = false;
+        }
     } else {
-        confpassword.style.background = "white";
+        // unhighlight the background
+        confpassword.style.background = "White";
+        // and if the HTML element was added, remove it
+        if (confpasswordHelpTextAdded) {
+            var element = document.querySelector("#pass2-div-row");
+            element.removeChild(element.lastChild);
+            confpasswordHelpTextAdded = false;
+        }
+        if (confpassword.value.length > 1) {
+            passwordValid = true;
+        }
     }
 }
+
+function addWarning (field, fieldName, message) {
+    // hightlight the background in red        
+    field.style.background = "Salmon";
+    // add new html element with help tips if it was not already added
+    var tag = document.createElement("small");
+    var text = document.createTextNode(message);
+    tag.appendChild(text);
+    var element = document.querySelector("#"+fieldName+"-div-row");
+    element.appendChild(tag);
+}
+
+function register_form_button_pressed () {
+    if (cpfValid && nameValid && surnameValid && emailValid && passwordValid) {
+        window.alert(`
+        CPF: ${cpf.value}\n
+        NOME: ${register_name.value}\n
+        SOBRENOME: ${surname.value}\n
+        EMAIL: ${email.value}\n
+        PASSWORD: ${password.value}\n
+        CONFPASSWORD: ${confpassword.value}\n
+        `);
+    } else {
+        window.alert('Preencha os campos corretamente!');
+    }
+    
+}
+
