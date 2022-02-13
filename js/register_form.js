@@ -71,6 +71,8 @@ function validate_cpf () {
     // if it passed the tests, then it means it's a valid cpf
     return true;
 }
+
+// checks if the cpf is valid in terms of size and format
 function verify_cpf () {
     let str_cpf = cpf.value;
 
@@ -96,6 +98,8 @@ function verify_cpf () {
     }
     cpfValid = true;
 }
+
+// set a mask for cpf field
 function mask_CPF () {
     // define prev_value as empty string
     let prev_value = "";
@@ -130,7 +134,9 @@ function mask_CPF () {
     if (cpf.value.length == 11) cpf.value += "-";
 }
 
+// checks if the name is valid in terms of size and format
 function verifyName () {
+    if (register_name.value.length == 0) return;
     // define prev_value as empty string
     let prev_value = "";
     // if register_name value has more than 1 char (it will if a nan char is typed)
@@ -138,6 +144,7 @@ function verifyName () {
         // the prev_value of the register_name will be a string from 0 to length-1;
         prev_value = register_name.value.substring(0,register_name.value.length-1);
     }
+
     // if last character typed was not a letter
     if (!register_name.value[register_name.value.length-1].match(/[a-z]/i)){
         if (!nameHelpTextAdded) {
@@ -163,7 +170,9 @@ function verifyName () {
     }
 }
 
+// checks if the surname is valid in terms of size and format
 function verifySurname () {
+    if (surname.value.length == 0) return;
     // define prev_value as empty string
     let prev_value = "";
     // if surname value has more than 1 char (it will if a nan char is typed)
@@ -181,7 +190,7 @@ function verifySurname () {
         surname.value = prev_value;
         return;
     } else {
-        // if last character is a number; unhighlight the background
+        // unhighlight the background
         surname.style.background = "white";
         // and if the HTML element was added, remove it
         if (surnameHelpTextAdded) {
@@ -195,6 +204,7 @@ function verifySurname () {
     }
 }
 
+// checks if the email is valid in terms of format
 function verifyEmail() {
     // match negated sets of not whitespace and not @ character with one or more plus a @ symbol and negated set. negated set.
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -217,6 +227,7 @@ function verifyEmail() {
     }    
 }
 
+// checks if the password is valid in terms of size and strength
 function verifyPassword () {
     let strength = 0;
     let pass_str = password.value;
@@ -226,6 +237,7 @@ function verifyPassword () {
     if (/[0-9]/.test(pass_str)) strength++;
     if (/[^A-Za-z0-9]/.test(pass_str)) strength++;
 
+    // remove the element if it was added before
     password.style.background = "White";
     if (passwordHelpTextAdded) {
         var element = document.querySelector("#pass1-div-row");
@@ -233,6 +245,7 @@ function verifyPassword () {
         passwordHelpTextAdded = false;
     }
 
+    // if the strength is 0, it means that there is no password
     if (strength == 0) return;
     
     // describes the intensity of the strength
@@ -248,6 +261,7 @@ function verifyPassword () {
     passwordHelpTextAdded = true;
 }
 
+// checks if both passwords are equal
 function validate_password () {
     if (confpassword.value !== password.value) {
         if (!confpasswordHelpTextAdded) {
@@ -270,6 +284,7 @@ function validate_password () {
     }
 }
 
+// pattern for adding a warning
 function addWarning (field, fieldName, message) {
     // hightlight the background in red        
     field.style.background = "Salmon";
@@ -281,6 +296,7 @@ function addWarning (field, fieldName, message) {
     element.appendChild(tag);
 }
 
+// alert only if all entries are valid
 function register_form_button_pressed () {
     if (cpfValid && nameValid && surnameValid && emailValid && passwordValid) {
         window.alert(`

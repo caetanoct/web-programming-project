@@ -57,7 +57,7 @@
                     <h1 class="font-weight-bold py-3">Sistema de Petshop</h1>
                     <h4>Faça login com sua conta</h4>
                     <form>
-                        <div class="form-row">
+                        <div class="form-row" id="mail-div-row">
                             <div class="col-lg-7">
                                 <input type="email" placeholder="Endereço de E-mail" class="form-control my-3 p-3" id="mail">
                             </div>
@@ -65,13 +65,13 @@
 
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="******" class="form-control my-3 p-3">
+                                <input type="password" placeholder="******" class="form-control my-3 p-3" id="password">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn1 mt-3 mb-3" onclick="changeToServices()">Login</button>
+                                <button type="button" class="btn1 mt-3 mb-3" id="login_button" onclick="changeToServices()">Login</button>
                             </div>
                         </div>
 
