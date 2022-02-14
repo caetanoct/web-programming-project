@@ -6,15 +6,15 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 
 ## Entrega 2
 
-(X) Entrega de todas as páginas do sistema - FEITO
+(X) Entrega de todas as páginas do sistema - Páginas entregues conforme protótipo inicial e seguindo requisitos do trabalho.
 
-(X) Páginas responsivas - FEITO
+(X) Páginas responsivas - Páginas responsivas usando Bootstrap e media query.
 
-(X) Eventos - FEITO
+(X) Eventos - OBS: Usamos alguns tipos de eventos que não são os recomendados para determinados campos, mas foi usado para cumprir o requisito do trabalho.
 
-(X) Estrutura de formulários - FEITO
+(X) Estrutura de formulários - Estão sendo logados no console os objetos ao clicar nos botões. No futuro podemos passar esse objeto para o backend.
 
-(X) Verificação de formulários - FEITO
+(X) Verificação de formulários - Verificação de CPF, E-mail, Nome, Sobrenome, Senha etc...
 
 ### Grupo:
 
@@ -26,14 +26,14 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 ## Bootstrap Grid
 
 Pra remover sarjetas (*gutters*) basta usar `g-0`
-| | Extra small | Small | Medium | Large | Extra large |
+|                     | Extra small                          | Small                                | Medium                               | Large                                | Extra large                          |
 |---------------------|--------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|
-| Breakpoint | <576px | ≥576px | 720px | ≥992px | ≥1200px | | Max container width | None (auto)
-| 540px | 720px | 960px | 1140px | | Class prefix | `col-`                                | `col-sm-`
-| `col-md-`                             | `col-lg-`                             | `col-xl-`
-| | # of columns | 12 | 12 | 12 | 12 | 12 | | Gutter width | 30px (15px on each side of a column) | 30px (15px on each
-side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each
-side of a column) |
+| Breakpoint          | <576px                               | ≥576px                               | 720px                                | ≥992px                               | ≥1200px                              |
+| Max container width | None (auto)                          | 540px                                | 720px                                | 960px                                | 1140px                               |
+| Class prefix        | `col-`                                | `col-sm-`                             | `col-md-`                             | `col-lg-`                             | `col-xl-`                             |
+| # of columns        | 12                                   | 12                                   | 12                                   | 12                                   | 12                                   |
+| Gutter width        | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) |
+
 
 ## Links Úteis
 
