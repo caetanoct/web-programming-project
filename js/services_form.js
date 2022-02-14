@@ -5,6 +5,7 @@ const markup_date_picker = document.getElementById("markup_date_picker");
 const time_picker = document.getElementById("time");
 const service_type_select = document.querySelector("#service_type_select");
 const radio_group = document.getElementsByName('radio_group');
+const alertaErro = document.querySelector("#alerta_erro");
 // ################## EVENTS ##################
 // button.onclick(getCheckedRadio());
 button.addEventListener("click", agendarServico);
@@ -158,6 +159,11 @@ function agendarServico() {
         }
         console.log(serviceForm)
     } else {
-        window.alert('Preencha os campos corretamente!');
+        const alertaErro = document.querySelector("#alerta_erro")
+        alertaErro.removeAttribute("hidden");
     }
+}
+
+function removeErrorAlert(){
+    alertaErro.setAttribute("hidden", "");
 }

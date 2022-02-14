@@ -56,7 +56,7 @@
             <div class="col-lg-7 px-5 pt-5">
                 <h1 class="font-weight-bold py-3">Sistema de Petshop</h1>
                 <h4>Formulário de Registro</h4>
-                <form>
+                <form oninput="removeErrorAlert()">
                     <div class="form-row" id="cpf-div-row">
                         <div class="col-lg-7">
                             <input id="cpf" type="text" placeholder="CPF" class="form-control my-3 p-2">
@@ -122,6 +122,13 @@
                                 <label class="form-check-label" for="other_gender_radio_button">
                                     Outro
                                 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <div class="alert alert-danger mt-3" id="alerta_erro" role="alert" hidden>
+                                Preencha os campos corretamente!
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 const email = document.getElementById("mail");
 const password = document.getElementById("password");
 const button = document.querySelector("#login_button");
+const alertaErro = document.querySelector("#alerta_erro");
 // ################## EVENTS ##################
 email.addEventListener("blur", verifyEmail);
 password.addEventListener("blur", verifyPassword);
@@ -58,6 +59,10 @@ function login() {
         }
         console.log(login)
     } else {
-        window.alert('Preencha os campos corretamente!');
+        alertaErro.removeAttribute("hidden");
     }
+}
+
+function removeErrorAlert(){
+    alertaErro.setAttribute("hidden", "");
 }

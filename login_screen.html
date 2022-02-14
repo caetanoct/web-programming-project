@@ -56,7 +56,7 @@
             <div class="col-lg-7 px-5 pt-5">
                 <h1 class="font-weight-bold py-3">Sistema de Petshop</h1>
                 <h4>Faça login com sua conta</h4>
-                <form>
+                <form oninput="removeErrorAlert()">
                     <div class="form-row" id="mail-div-row">
                         <div class="col-lg-7">
                             <input type="email" placeholder="Endereço de E-mail" class="form-control my-3 p-3"
@@ -67,6 +67,13 @@
                     <div class="form-row">
                         <div class="col-lg-7">
                             <input type="password" placeholder="******" class="form-control my-3 p-3" id="password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <div class="alert alert-danger mt-3" id="alerta_erro" role="alert" hidden>
+                                Preencha os campos corretamente!
+                            </div>
                         </div>
                     </div>
 
@@ -84,6 +91,7 @@
             </div>
         </div>
     </div>
+
 </section>
 <script src="./js/login_form.js"></script>
 <!-- bootstrap js -->

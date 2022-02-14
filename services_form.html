@@ -53,7 +53,7 @@
             <div class="col-lg-6 text-center">
                 <h1 class="font-weight-bold py-3">Sistema de Petshop</h1>
                 <h4 class="p-3"><i class="fas fa-dog mb-2"></i><br>Agendamento</h4>
-                <form>
+                <form oninput="removeErrorAlert()">
                     <div class="form-row mx-2" id="pet_name-div-row">
                         <div class="col">
                             <input id="pet_name" type="text" placeholder="Nome do Pet" class="form-control my-3 p-3">
@@ -66,13 +66,6 @@
                                    class="form-control input-group date my-3 p-3" data-provide="datepicker">
                         </div>
                     </div>
-
-                    <!-- <div class="form-row mx-2">
-                        <div class="col">
-                            <input type="date" id="date_input" placeholder="Selecione a data"
-                                class="form-control input-group my-3 p-3">
-                        </div>
-                    </div> -->
 
                     <div class="form-row mx-2">
                         <div class="col" id="time-col">
@@ -123,6 +116,13 @@
                                 </label>
                             </div>
 
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-danger mt-3" id="alerta_erro" role="alert" hidden>
+                                Preencha os campos corretamente!
+                            </div>
                         </div>
                     </div>
 
