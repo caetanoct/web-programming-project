@@ -159,7 +159,6 @@ function agendarServico() {
         }
         console.log(serviceForm)
     } else {
-        const alertaErro = document.querySelector("#alerta_erro")
         alertaErro.removeAttribute("hidden");
     }
 }
