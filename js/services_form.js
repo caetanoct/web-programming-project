@@ -27,7 +27,7 @@ var serviceValid = false;
 // ################## FUNCTIONS ##################
 function printHelp() {
     var tag = document.createElement("small");  
-    var text = document.createTextNode("Digite o tempo no formato HH:MM AM/PM");    
+    var text = document.createTextNode("Você pode digitar o tempo, se preferir.");    
     tag.appendChild(text);
     var help = document.querySelector("#time-col");
     help.appendChild(tag);
