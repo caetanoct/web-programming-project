@@ -6,6 +6,7 @@ const password = document.getElementById("pass1");
 const confpassword = document.getElementById("pass2");
 const button = document.querySelector("#register_button");
 const email = document.querySelector("#mail");
+const alertaErro = document.querySelector("#alerta_erro");
 
 // ################## EVENTS ##################
 // button.onclick(printCheckedRadio());
@@ -312,8 +313,12 @@ function registrar() {
         };
         console.log(registerForm);
     } else {
-        window.alert('Preencha os campos corretamente!');
+        alertaErro.removeAttribute("hidden");
     }
 
+}
+
+function removeErrorAlert() {
+    alertaErro.setAttribute("hidden", "");
 }
 
