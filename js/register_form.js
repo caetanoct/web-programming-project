@@ -315,7 +315,6 @@ function registrar() {
     } else {
         alertaErro.removeAttribute("hidden");
     }
-
 }
 
 function removeErrorAlert() {
