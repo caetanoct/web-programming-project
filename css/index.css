@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -6,30 +6,30 @@
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-body{
-    background-color: rgb(253,231,210);
+body {
+    background-color: rgb(253, 231, 210);
 }
 
-header{
+header {
     height: 5vh;
     justify-content: space-between;
     display: flex;
     padding: 1vh 2vw;
 }
 
-header div{
+header div {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.imagem-menu{
+.imagem-menu {
     width: 12.5%;
     height: 100%;
     margin-right: 2vw;
 }
 
-.titulo-principal{
+.titulo-principal {
     width: 50%;
     font-size: 2em;
     text-align: right;
@@ -38,21 +38,21 @@ header div{
     text-shadow: 1px 1px 2px black;
 }
 
-.logo{
+.logo {
     width: 12.5%;
     height: 100%;
     margin-left: 4vw;
     filter: drop-shadow(1px 1px 1px black);
 }
 
-main .banner{
+main .banner {
     width: 100%;
     height: 30vh;
     background-image: url(../img/petshop-efeito.png);
     background-size: 100%;
 }
 
-main .banner h2{
+main .banner h2 {
     text-align: center;
     font-size: 1.3em;
     color: mintcream;
@@ -60,7 +60,7 @@ main .banner h2{
     text-shadow: 2px 2px 4px black;
 }
 
-main .banner p{
+main .banner p {
     text-align: center;
     font-size: 0.9em;
     color: mintcream;
@@ -68,14 +68,14 @@ main .banner p{
     text-shadow: 1px 1px 2px black;
 }
 
-main .banner div{
+main .banner div {
     display: block;
     justify-content: center;
     width: 100%;
     height: 17.5%;
 }
 
-main .banner div button{
+main .banner div button {
     width: 30%;
     height: 100%;
     padding: 2vw;
@@ -83,38 +83,38 @@ main .banner div button{
     background-color: rgb(81, 112, 138);
     color: mintcream;
     font-size: 1.1em;
-    margin: 0.5vh 35%; 
+    margin: 0.5vh 35%;
     border: rgb(62, 85, 104) 3px solid;
     border-top: none;
     border-left: none;
 }
 
-footer{
+footer {
     width: 100%;
     height: 12vh;
     background-color: rgb(100, 101, 102);
 }
 
-footer h3{
+footer h3 {
     color: mintcream;
     text-align: center;
     font-size: 1.1em;
     padding: 1vh 0;
 }
 
-footer div{
+footer div {
     display: flex;
     justify-content: space-between;
     padding: 0 10vw;
 }
 
-footer div img{
+footer div img {
     width: 10%;
     height: 10%;
     filter: drop-shadow(0 0 2px black);
 }
 
-footer p{
+footer p {
     color: mintcream;
     padding-top: 1vh;
     font-size: 0.8em;

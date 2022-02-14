@@ -3,9 +3,9 @@ const email = document.getElementById("mail");
 const password = document.getElementById("password");
 const button = document.querySelector("#login_button");
 // ################## EVENTS ##################
-email.addEventListener("blur",verifyEmail);
-password.addEventListener("blur",verifyPassword);
-button.addEventListener("click",alertData);
+email.addEventListener("blur", verifyEmail);
+password.addEventListener("blur", verifyPassword);
+button.addEventListener("click", login);
 // ################## ATTRIBUTES AND FLAGS ##################
 var emailHelpTextAdded = false;
 var emailValid = false;
@@ -32,34 +32,31 @@ function verifyEmail() {
             emailHelpTextAdded = false;
         }
         emailValid = true;
-    }    
-}
-
-function verifyPassword () {
-    if (password.value.length > 0) {
-        passwordValid = true;
-    } else {
-        passwordValid = false;
     }
 }
 
-function addWarning (field, fieldName, message) {
+function verifyPassword() {
+    passwordValid = password.value.length > 0;
+}
+
+function addWarning(field, fieldName, message) {
     // hightlight the background in red        
     field.style.background = "Salmon";
     // add new html element with help tips if it was not already added
     var tag = document.createElement("small");
     var text = document.createTextNode(message);
     tag.appendChild(text);
-    var element = document.querySelector("#"+fieldName+"-div-row");
+    var element = document.querySelector("#" + fieldName + "-div-row");
     element.appendChild(tag);
 }
 
-function alertData () {
+function login() {
     if (emailValid && passwordValid) {
-        window.alert(`
-        EMAIL: ${email.value}\n
-        PASSWORD: ${password.value}\n
-        `);
+        var login = {
+            "email": email.value,
+            "password": password.value
+        }
+        console.log(login)
     } else {
         window.alert('Preencha os campos corretamente!');
     }
