@@ -1,4 +1,5 @@
 # Web Programming Project
+
 Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 
 ## Sistema Web para Petshops
@@ -11,11 +12,12 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 
 (X) Eventos - FEITO
 
-() Estrutura de formulários - TO-DO @TAINAN
+(X) Estrutura de formulários - FEITO
 
-() Verificação de formulários - TO-DO @IGOR
+(X) Verificação de formulários - FEITO
 
 ### Grupo:
+
 - Caetano Colin Torres
 - Evandro Marcio da Silva Machado
 - Igor Perazzoli
@@ -24,13 +26,14 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 ## Bootstrap Grid
 
 Pra remover sarjetas (*gutters*) basta usar `g-0`
-|                     | Extra small                          | Small                                | Medium                               | Large                                | Extra large                          |
+| | Extra small | Small | Medium | Large | Extra large |
 |---------------------|--------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|--------------------------------------|
-| Breakpoint          | <576px                               | ≥576px                               | 720px                                | ≥992px                               | ≥1200px                              |
-| Max container width | None (auto)                          | 540px                                | 720px                                | 960px                                | 1140px                               |
-| Class prefix        | `col-`                                | `col-sm-`                             | `col-md-`                             | `col-lg-`                             | `col-xl-`                             |
-| # of columns        | 12                                   | 12                                   | 12                                   | 12                                   | 12                                   |
-| Gutter width        | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) |
+| Breakpoint | <576px | ≥576px | 720px | ≥992px | ≥1200px | | Max container width | None (auto)
+| 540px | 720px | 960px | 1140px | | Class prefix | `col-`                                | `col-sm-`
+| `col-md-`                             | `col-lg-`                             | `col-xl-`
+| | # of columns | 12 | 12 | 12 | 12 | 12 | | Gutter width | 30px (15px on each side of a column) | 30px (15px on each
+side of a column) | 30px (15px on each side of a column) | 30px (15px on each side of a column) | 30px (15px on each
+side of a column) |
 
 ## Links Úteis
 
@@ -57,6 +60,7 @@ Pra remover sarjetas (*gutters*) basta usar `g-0`
 ```
 
 Earlier Versions:
+
 ```html
 <!-- CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

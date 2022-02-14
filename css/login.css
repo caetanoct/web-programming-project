@@ -1,17 +1,17 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(253,231,210);
+body {
+    background-color: rgb(253, 231, 210);
 }
 
 .row {
     background-color: white;
     border-radius: 30px;
-    box-shadow: 10px 10px 10px rgb(243,221,200);
+    box-shadow: 10px 10px 10px rgb(243, 221, 200);
 }
 
 section img {
@@ -19,9 +19,10 @@ section img {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
+
 /* arruma as bordas em disposivos mobile */
 @media (max-width: 992px) {
-    section img {    
+    section img {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 0px;
@@ -37,8 +38,9 @@ section img {
     background-color: black;
     color: white;
     border-radius: 5px;
-    font-weight: bold;    
+    font-weight: bold;
 }
+
 .btn1:hover {
     background-color: white;
     color: black;
@@ -48,9 +50,11 @@ section img {
 a:link {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 a.navlink {
     color: gray;
     padding: 0.5em;
@@ -61,6 +65,7 @@ nav a:hover, nav a:focus {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     text-decoration: none;
 }
+
 /* nav {
     background-color: rgb(253,231,210, 0.1);
     border-radius: 10px;

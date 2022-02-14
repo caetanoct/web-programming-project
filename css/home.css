@@ -1,84 +1,87 @@
 a, a:focus, a:hover {
-  color: rgb(253,231,210);
+    color: rgb(253, 231, 210);
 }
 
 .btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
-  color: #333;
-  text-shadow: none;
-  background-color: rgb(253,231,210);
-  border: .05rem solid rgb(253,231,210);
+    color: #333;
+    text-shadow: none;
+    background-color: rgb(253, 231, 210);
+    border: .05rem solid rgb(253, 231, 210);
 }
 
 html, body {
-  height: 100%;
-  background-color: #333;
+    height: 100%;
+    background-color: #333;
 }
 
 body {
-  /* gradient for better visualization */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/petshop-efeito.png");   
-  height: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    /* gradient for better visualization */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/petshop-efeito.png");
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  color: rgb(253,231,210);
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: rgb(253, 231, 210);
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
 /* em é, simplesmente, o tamanho da fonte */
 .font_42em {
-  max-width: 42em;
+    max-width: 42em;
 }
 
 
 .masthead {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+    border-bottom-color: rgba(255, 255, 255, .25);
 }
+
 /* The “+” sign selector is used to select the elements that are placed immediately after the specified element but not inside the particular elements */
 .nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 .nav-masthead .active {
-  color: rgb(253,231,210);
-  border-bottom-color: rgb(253,231,210);
+    color: rgb(253, 231, 210);
+    border-bottom-color: rgb(253, 231, 210);
 }
+
 /* Medium devices (tablets, 48em and up) */
 @media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
+    .masthead-brand {
+        float: left;
+    }
+
+    .nav-masthead {
+        float: right;
+    }
 }
 
 .btn-lg {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .footer_transparency {
-  color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .5);
 }
