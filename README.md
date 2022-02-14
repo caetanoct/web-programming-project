@@ -12,9 +12,9 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 
 (X) Eventos - FEITO
 
-() Estrutura de formulários - TO-DO @TAINAN
+(X) Estrutura de formulários - FEITO
 
-() Verificação de formulários - TO-DO @IGOR
+(X) Verificação de formulários - FEITO
 
 ### Grupo:
 
