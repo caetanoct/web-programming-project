@@ -4,18 +4,6 @@ Projeto para disciplina INE5646-03238B (20212) - Programação para Web
 
 ## Sistema Web para Petshops
 
-## Entrega 2
-
-(X) Entrega de todas as páginas do sistema - Páginas entregues conforme protótipo inicial e seguindo requisitos do trabalho.
-
-(X) Páginas responsivas - Páginas responsivas usando Bootstrap e media query.
-
-(X) Eventos - OBS: Usamos alguns tipos de eventos que não são os recomendados para determinados campos, mas foi usado para cumprir o requisito do trabalho.
-
-(X) Estrutura de formulários - Estão sendo logados no console os objetos ao clicar nos botões. No futuro podemos passar esse objeto para o backend.
-
-(X) Verificação de formulários - Verificação de CPF, E-mail, Nome, Sobrenome, Senha etc...
-
 ### Grupo:
 
 - Caetano Colin Torres
@@ -75,4 +63,12 @@ Earlier Versions:
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+```
+
+### Instalação
+
+```bash
+npm install --save express
+npm install nodemon -g
+npm install --save cors
 ```
