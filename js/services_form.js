@@ -195,7 +195,7 @@ function agendarServico() {
             "servico": getSelectedOption(),
             "portePet": portePet.value,
         }        
-        sendData( serviceForm );
+        sendData(serviceForm);
     } else {
         alertaErro.removeAttribute("hidden");
     }
