@@ -33,7 +33,7 @@ Pra remover sarjetas (*gutters*) basta usar `g-0`
 * [Como ver requisições http no chrome](https://mkyong.com/computer-tips/how-to-view-http-headers-in-google-chrome/)
 * [Como inserir dados no mysql com javascript](https://stackoverflow.com/questions/45891998/posting-form-data-to-mysql-using-nodejs-w-express)
 * [Como enviar dados de um formulário com XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_forms_through_JavaScript)
-
+* [Tutorial Mongoose](https://available-jaborosa-64c.notion.site/Aula-13-Banco-de-Dados-MongoDB-d2aa112aa63940a4b906186517697a4c)
 ## Quick Include
 
 ```html
@@ -74,4 +74,6 @@ Earlier Versions:
 npm install --save express
 npm install nodemon -g
 npm install --save cors
+npm install mongoose --save
+npm install dotenv --save
 ```
