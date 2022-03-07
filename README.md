@@ -30,6 +30,9 @@ Pra remover sarjetas (*gutters*) basta usar `g-0`
 * [Bootstrap Date Picker](https://bootstrap-datepicker.readthedocs.io/en/latest/)
 * [Bootstrap Flex](https://getbootstrap.com/docs/4.4/utilities/flex/)
 * [Bootstrap Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
+* [Como ver requisições http no chrome](https://mkyong.com/computer-tips/how-to-view-http-headers-in-google-chrome/)
+* [Como inserir dados no mysql com javascript](https://stackoverflow.com/questions/45891998/posting-form-data-to-mysql-using-nodejs-w-express)
+* [Como enviar dados de um formulário com XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_forms_through_JavaScript)
 
 ## Quick Include
 
