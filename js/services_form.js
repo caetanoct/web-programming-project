@@ -26,6 +26,44 @@ var timeValid = false;
 var serviceValid = false;
 
 // ################## FUNCTIONS ##################
+// function from tutorial https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_forms_through_JavaScript
+function sendData( data ) {
+    console.log( 'Sending data' );
+  
+    const XHR = new XMLHttpRequest();
+  
+    let urlEncodedData = "",
+        urlEncodedDataPairs = [],
+        name;
+  
+    // Turn the data object into an array of URL-encoded key/value pairs.
+    for( name in data ) {
+      urlEncodedDataPairs.push( encodeURIComponent( name ) + '=' + encodeURIComponent( data[name] ) );
+    }
+  
+    // Combine the pairs into a single string and replace all %-encoded spaces to
+    // the '+' character; matches the behavior of browser form submissions.
+    urlEncodedData = urlEncodedDataPairs.join( '&' ).replace( /%20/g, '+' );
+  
+    // Define what happens on successful data submission
+    XHR.addEventListener( 'load', function(event) {
+      alert( 'Yeah! Data sent and response loaded.' );
+    } );
+  
+    // Define what happens in case of error
+    XHR.addEventListener( 'error', function(event) {
+      alert( 'Oops! Something went wrong.' );
+    } );
+  
+    // Set up our request
+    XHR.open( 'POST', 'http://localhost:3000/post_service_form' );
+  
+    // Add the required HTTP header for form data POST requests
+    XHR.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+  
+    // Finally, send our data.
+    XHR.send( urlEncodedData );
+}
 function printHelp() {
     var tag = document.createElement("small");
     var text = document.createTextNode("Você pode digitar o tempo, se preferir.");
@@ -156,8 +194,8 @@ function agendarServico() {
             "horario": getTime(),
             "servico": getSelectedOption(),
             "portePet": portePet.value,
-        }
-        console.log(serviceForm)
+        }        
+        sendData( serviceForm );
     } else {
         alertaErro.removeAttribute("hidden");
     }
