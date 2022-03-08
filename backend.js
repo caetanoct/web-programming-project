@@ -16,6 +16,7 @@ app.use(express.json());
 app.get('/',(request,response)=> {
     response.send('EAEEEEE');
 });
+// registra no BD um servico
 app.post('/post_service_form', async function(req, res){    
     console.log(req.body)
         // criando objeto a partir do esquema 
@@ -36,9 +37,33 @@ app.post('/post_service_form', async function(req, res){
             console.log(err)
         }); 
 });
-
-app.post('/post_login_form', function(req, res){
-    res.send(req.body);
+// faz update na data de um servico
+app.patch("/service/:id", async(req,res)=>{
+    const updatedService = await Se.updateOne(
+        {_id: req.params.id}, 
+        {$set: {data: req.body.data}});
+    res.json(updatedService);
+});
+// deleta o agendamento de servico
+app.delete("/service/:id", async(req,res)=>{
+    const removedService = await Service.remove({_id: req.params.id});
+    res.json(removedService);
+});
+// busca dados de registro a partir do email informado, retorna o registro caso a autenticação é valida, caso contrario retorna uma msg informando que falhou.
+app.post('/auth_login', async function(req, res){
+    const register = await Register.find({email: req.body.email});
+    object = register[0];
+    if (object === undefined) {
+        console.log("email register not found.");
+        res.send("username or password failed.");
+    } else {
+        if (object.password == req.body.password) {
+            res.json(register);
+        } else {
+            console.log("passwords don't match.");
+            res.send("username or password failed.");
+        }
+    }
 });
 // insere no banco de dados o registro do usuario
 app.post('/post_register_form', async function(req, res){    

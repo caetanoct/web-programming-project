@@ -34,7 +34,7 @@ function sendData( data ) {
   
     // Define what happens on successful data submission
     XHR.addEventListener( 'load', function(event) {
-      alert( 'Yeah! Data sent and response loaded.' );
+      alert( 'Yeah! Data sent and response loaded.' );      
     } );
   
     // Define what happens in case of error
@@ -43,11 +43,11 @@ function sendData( data ) {
     } );
   
     // Set up our request
-    XHR.open( 'POST', 'http://localhost:3000/post_login_form' );
+    XHR.open( 'POST', 'http://localhost:3000/auth_login' );
   
     // Add the required HTTP header for form data POST requests
     XHR.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
-  
+           
     // Finally, send our data.
     XHR.send( urlEncodedData );
 }
