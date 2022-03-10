@@ -39,7 +39,7 @@ app.post('/post_service_form', async function(req, res){
 });
 // faz update na data de um servico
 app.patch("/service/:id", async(req,res)=>{
-    const updatedService = await Se.updateOne(
+    const updatedService = await Service.updateOne(
         {_id: req.params.id}, 
         {$set: {data: req.body.data}});
     res.json(updatedService);
