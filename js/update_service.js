@@ -2,7 +2,6 @@
 const button = document.querySelector("#send_button");
 const delete_button = document.querySelector("#delete_button");
 const markup_date_picker = document.getElementById("markup_date_picker");
-const alertaErro = document.querySelector("#alerta_erro");
 const service_id = document.querySelector("#service_id");
 // ################## EVENTS ##################
 // button.onclick(getCheckedRadio());
@@ -84,10 +83,6 @@ function change_service_date() {
         }        
         update_date(service_date);
     } else {
-        alertaErro.removeAttribute("hidden");
+        alert("date is unvalid.");
     }
-}
-
-function removeErrorAlert(){
-    alertaErro.setAttribute("hidden", "");
 }

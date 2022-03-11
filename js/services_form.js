@@ -47,7 +47,11 @@ function sendData( data ) {
   
     // Define what happens on successful data submission
     XHR.addEventListener( 'load', function(event) {
-      alert( 'Yeah! Data sent and response loaded. ServiceID (Save this number) ='+ XHR.responseText);
+      var response = XHR.responseText;
+      alert( 'Yeah! Data sent and response loaded. Service ='+ response);
+      var json = JSON.parse(response);
+      console.log(json);
+      console.log("id="+json._id);
     } );
   
     // Define what happens in case of error
